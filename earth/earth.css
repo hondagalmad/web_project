@@ -1,0 +1,85 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #0b0b2b;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('resources/stars.gif');
+    background-size: cover;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #00ff99;
+    text-shadow: 2px 2px #000, -2px -2px #000;
+    margin-bottom: 20px;
+}
+
+.earth {
+    width: 400px;
+    height: 250px;
+    background-image: url('resources/pixearth.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    border: 4px solid #00ff99;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff99;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.info h2 {
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+.info p, .info ul {
+    font-size: 10px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.info ul {
+    list-style-type: none;
+}
+
+.info ul li::before {
+    content: "▣ ";
+    color: #00ff99;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #00ff99;
+    color: #000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 0 #000;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #00cc7a;
+    box-shadow: 4px 4px 0 #000;
+}
