@@ -5,10 +5,9 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh; 
     overflow: hidden;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .star {
@@ -34,17 +33,14 @@ img {
     z-index: 1;
 }
 
-/* --- TEXT CONTAINER --- */
 .text-container {
     position: absolute;
-    top: 50%; /* Centered Vertically */
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 10;
-    width: 100%;
-    
-    /* Text appears at 4.5s */
+    width: 100%;    
     opacity: 0;
     animation: show1 2s forwards 4.5s;
 }
@@ -53,7 +49,7 @@ img {
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     color: white;
-    font-size: 3rem; /* Adjusted size */
+    font-size: 3rem;
     margin: 0;
     line-height: 1.2;
     text-shadow: 6px 6px 0 #000;
@@ -68,7 +64,7 @@ img {
 
 /* --- BUTTON STYLES --- */
 a {
-  opacity: 0; /* Hidden initially */
+  opacity: 0;
   display: inline-block;
   padding: 15px 25px;
   font-family: "Press Start 2P", system-ui;
@@ -86,20 +82,18 @@ a {
   position: relative;
   z-index: 20;
 
-  /* Animation: Fades in/moves up at 8s */
   animation: fademove 1.5s forwards 9s;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 a:hover {
-  transform: translateY(-5px); /* Gentle lift on hover */
   box-shadow: 0 0 35px 10px #ffd700;
 }
 
 @keyframes fademove {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Start slightly lower */
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -107,7 +101,6 @@ a:hover {
   }
 }
 
-/* --- ROCKET 2 (LANDED BESIDE TEXT) --- */
 .rocket-landed {
     position: absolute;
     width: 50px;
@@ -119,7 +112,6 @@ a:hover {
     animation: show1 1s forwards 5s, float 3s ease-in-out infinite;
 }
 
-/* --- ROCKET 1 (RISING & DISAPPEARING) --- */
 .rocket-rising {
     width: 50px;
     left: 50%;
@@ -156,12 +148,58 @@ a:hover {
 }
 
 /* --- PLANETS --- */
-.one { width: 200px; top: 50px; left: 40px; opacity: 0; animation: show1 2s forwards 6s; }
-.two { width: 200px; top: 45%; left: 300px; transform: translateY(-50%); opacity: 0; animation: show1 2s forwards 8s, float 3s ease-in-out infinite; }
-.three { width: 250px; bottom: 50px; left: 40px; opacity: 0; animation: show1 2s forwards 7s; }
-.four { width: 200px; top: 50px; right: 40px; transform: scaleX(-1); opacity: 0; animation: show1 2s forwards 7.5s; }
-.five { width: 300px; top: 40%; right: 300px; transform: translateY(-50%) scaleX(-1); transform: rotate(45deg); opacity: 0; animation: show1 2s forwards 8.5s, float 3s ease-in-out infinite; }
-.six { width: 250px; bottom: 30px; right: 40px; transform: scaleX(-1); opacity: 0; animation: show1 2s forwards 6.5s; }
+.one {
+    width: 200px;
+    top: 50px;
+    left: 40px;
+    opacity: 0;
+    animation: show1 2s forwards 6s;
+}
+
+.two {
+    width: 200px;
+    top: 45%;
+    left: 300px;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: show1 2s forwards 8s, float 3s ease-in-out infinite;
+}
+
+.three {
+    width: 250px;
+    bottom: 50px;
+    left: 40px;
+    opacity: 0;
+    animation: show1 2s forwards 7s;
+}
+
+.four {
+    width: 200px;
+    top: 50px;
+    right: 40px;
+    transform: scaleX(-1);
+    opacity: 0;
+    animation: show1 2s forwards 7.5s;
+}
+
+.five {
+    width: 300px;
+    top: 38%;
+    right: 300px;
+    transform: translateY(-50%) scaleX(-1);
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: show1 2s forwards 8.5s, float 3s ease-in-out infinite;
+}
+
+.six {
+    width: 250px;
+    bottom: 30px;
+    right: 40px;
+    transform: scaleX(-1);
+    opacity: 0;
+    animation: show1 2s forwards 6.5s;
+}
 
 #audio-control {
     position: absolute;
