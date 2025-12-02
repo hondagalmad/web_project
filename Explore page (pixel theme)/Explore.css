@@ -49,10 +49,10 @@ img {
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     color: white;
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin: 0;
     line-height: 1.2;
-    text-shadow: 6px 6px 0 #000;
+    text-shadow: 6px 6px 0 #282828;
 }
 
 .text-container h1 span {
@@ -60,6 +60,7 @@ img {
     color: #aaa;
     display: block;
     margin-top: 15px;
+    text-shadow: 3px 3px 0 #363636;
 }
 
 /* --- BUTTON STYLES --- */
