@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturn 3D Model Viewer</title>
+    <style>
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background-color: #000; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+        #canvas-container { 
+            width: 100vw; 
+            height: 100vh; 
+        }
+        #ui-layer {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            pointer-events: none;
+            z-index: 10;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-top: 5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(20, 20, 20, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            text-align: center;
+            z-index: 20;
+            transition: opacity 0.5s;
+            max-width: 400px;
+            width: 80%;
+        }
+        .loader-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #e68a00; 
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #error-msg {
+            display: none;
+            color: #ff6b6b;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+    
+        #manual-upload-container {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #444;
+        }
+        .file-upload-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #afac00;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            border: none;
+        }
+        .file-upload-btn:hover {
+            background-color: #c78100;
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="loading">
+        <div id="spinner" class="loader-spinner"></div>
+        <div id="loading-text">Loading Model...</div>
+        
+        <div id="error-msg"></div>
+        
+        <div id="manual-upload-container">
+            <p style="color: #ccc; margin-bottom: 10px; font-size: 0.85rem;">
+                <b>Viewer Mode:</b> Please select your model file to view it.
+            </p>
+            <label class="file-upload-btn">
+                Select ./models/Saturn_1_120536.glb
+                <input type="file" id="file-input" accept=".glb,.gltf">
+            </label>
+        </div>
+    </div>
+
+    <div id="ui-layer">
+        <h1>Saturn Surface</h1>
+        <p>Left Click: Rotate | Right Click: Pan | Scroll: Zoom</p>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+
+        const MODEL_FILENAME = './models/Saturn_1_120536.glb';
+        
+        
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x050505); 
+
+       
+        const starGeometry = new THREE.BufferGeometry();
+        const starCount = 1500;
+        const starPositions = new Float32Array(starCount * 3);
+        for(let i=0; i<starCount*3; i++) {
+            starPositions[i] = (Math.random() - 0.5) * 600; 
+        }
+        starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+        const starMaterial = new THREE.PointsMaterial({color: 0xffffff, size: 0.7, sizeAttenuation: true});
+        const stars = new THREE.Points(starGeometry, starMaterial);
+        scene.add(stars);
+
+        
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 0, 15); 
+
+        
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.outputColorSpace = THREE.SRGBColorSpace; 
+        container.appendChild(renderer.domElement);
+
+       
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.minDistance = 2;
+        controls.maxDistance = 50;
+
+        
+        const ambientLight = new THREE.AmbientLight(0x404040, 2); 
+        scene.add(ambientLight);
+
+       
+        const sunLight = new THREE.DirectionalLight(0xffffff, 3);
+        sunLight.position.set(10, 5, 10);
+        scene.add(sunLight);
+
+        
+        const loader = new GLTFLoader();
+        const loadingEl = document.getElementById('loading');
+        const loadingText = document.getElementById('loading-text');
+        const errorMsg = document.getElementById('error-msg');
+        const spinner = document.getElementById('spinner');
+        const manualUploadContainer = document.getElementById('manual-upload-container');
+        const fileInput = document.getElementById('file-input');
+
+        function loadModel(url) {
+           
+            spinner.style.display = 'block';
+            errorMsg.style.display = 'none';
+            manualUploadContainer.style.display = 'none';
+            loadingText.innerText = "Loading Model...";
+            loadingText.style.display = 'block';
+
+            try {
+                loader.load(
+                    url,
+                    (gltf) => {
+                        const model = gltf.scene;
+                        
+                        
+                        const box = new THREE.Box3().setFromObject(model);
+                        const center = box.getCenter(new THREE.Vector3());
+                        model.position.sub(center); 
+
+                        
+                        const size = box.getSize(new THREE.Vector3());
+                        const maxDim = Math.max(size.x, size.y, size.z);
+                        if (maxDim > 0) {
+                            const scale = 5 / maxDim; 
+                            model.scale.setScalar(scale);
+                        }
+
+                        scene.add(model);
+                        
+                        
+                        loadingEl.style.opacity = '0';
+                        setTimeout(() => loadingEl.style.display = 'none', 500);
+                    },
+                    (xhr) => {
+                        
+                        if (xhr.total > 0) {
+                            const percent = (xhr.loaded / xhr.total * 100).toFixed(0);
+                            loadingText.innerText = `Loading Saturn... ${percent}%`;
+                        }
+                    },
+                    (error) => {
+                        console.error('An error happened', error);
+                        showErrorUI();
+                    }
+                );
+            } catch (err) {
+                console.error("Synchronous load error:", err);
+                showErrorUI();
+            }
+        }
+
+        function showErrorUI() {
+            spinner.style.display = 'none';
+            loadingText.style.display = 'none';
+            errorMsg.style.display = 'block';
+            manualUploadContainer.style.display = 'block';
+            
+            
+            if (window.location.protocol === 'blob:') {
+                 errorMsg.innerHTML = `<b>Preview Mode</b><br>Cannot auto-load files in this preview.`;
+            } else {
+                 errorMsg.innerHTML = `
+                    <b>Auto-load failed.</b><br>
+                    Make sure <em>${MODEL_FILENAME}</em> is in the same folder.
+                `;
+            }
+        }
+
+        
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const url = URL.createObjectURL(file);
+                loadModel(url);
+            }
+        });
+        if (window.location.protocol === 'blob:') {
+             console.log("Blob environment detected. Waiting for user input.");
+             showErrorUI(); 
+        } else {
+             loadModel(MODEL_FILENAME);
+        }
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+    </script>
+</body>
+</html>
