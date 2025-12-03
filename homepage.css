@@ -1,0 +1,348 @@
+  /* --- RESET & BASIC SETUP --- */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  html {
+      scroll-behavior: smooth;
+      /* Enables smooth scrolling between sections */
+  }
+
+  body {
+      font-family: 'VT323', monospace;
+      /* Retro terminal font */
+      background-color: #050510;
+      /* Deep space dark */
+      color: #ffffff;
+      line-height: 1.4;
+      overflow-x: hidden;
+      font-size: 1.3rem;
+      /* VT323 needs to be slightly larger */
+  }
+
+  /* --- BACKGROUND STARS EFFECT (Retained but sharper) --- */
+  .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      /* Made stars square pixels */
+      background:
+          radial-gradient(1px 1px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+          radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+          radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 130px 80px, #fff, rgba(0, 0, 0, 0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      opacity: 0.5;
+      animation: twinkle 5s infinite linear;
+      /* Changed to linear for smooth movement */
+  }
+
+  @keyframes twinkle {
+      0% {
+          transform: translateY(0);
+      }
+
+      100% {
+          transform: translateY(-200px);
+      }
+  }
+
+  /* --- HERO SECTION --- */
+  .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background: radial-gradient(circle at center, rgba(20, 30, 60, 0.4) 0%, rgba(5, 5, 16, 1) 100%);
+  }
+
+  .hero h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2.5rem;
+      /* Adjusted for chunky font */
+      color: #4db5ff;
+      text-shadow: 4px 4px 0px #0056b3;
+      /* Retro block shadow */
+      margin-bottom: 30px;
+      line-height: 1.5;
+      text-transform: uppercase;
+  }
+
+  .hero p {
+      max-width: 800px;
+      font-size: 1.5rem;
+      color: #cbd5e1;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 0px #000;
+  }
+
+  /* --- NAVIGATION BOXES --- */
+  .nav-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .nav-box {
+      width: 280px;
+      padding: 25px 20px;
+      border: 4px solid #4db5ff;
+      /* Chunky border */
+      background: #0a1428;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.8rem;
+      border-radius: 0;
+      /* No rounded corners */
+      transition: all 0.1s steps(2);
+      /* Instant/Step transition */
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 6px 6px 0px #0056b3;
+      /* Hard block shadow */
+      text-transform: uppercase;
+  }
+
+  .nav-box:hover {
+      transform: translate(4px, 4px);
+      /* Moves down to "press" the button */
+      box-shadow: 2px 2px 0px #0056b3;
+      background: #4db5ff;
+      color: #050510;
+  }
+
+  /* --- CONTENT SECTIONS --- */
+  section {
+      padding: 80px 20px;
+      min-height: auto;
+      /* Changed from 80vh to auto for flexibility */
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-bottom: 50px;
+  }
+
+  .section-title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.8rem;
+      color: #4db5ff;
+      border-bottom: 4px solid #4db5ff;
+      display: inline-block;
+      margin-bottom: 40px;
+      padding-bottom: 15px;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 0px #0056b3;
+  }
+
+  .intro-text {
+      margin-bottom: 30px;
+      font-size: 1.4rem;
+      color: #a0aec0;
+  }
+
+  /* --- COMPARISON SECTION (NEW) --- */
+  .comparison-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+  }
+
+  .info-box {
+      flex: 1;
+      min-width: 300px;
+      background: #0f1a2e;
+      border: 4px solid #4db5ff;
+      padding: 30px;
+      box-shadow: 8px 8px 0px #0056b3;
+      position: relative;
+  }
+
+  .info-box h3 {
+      font-family: 'Press Start 2P', cursive;
+      color: #fff;
+      margin-bottom: 25px;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      border-bottom: 4px dashed #4db5ff;
+      padding-bottom: 15px;
+      line-height: 1.5;
+  }
+
+  .info-box ul {
+      list-style-type: none;
+  }
+
+  .info-box li {
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 30px;
+  }
+
+  .info-box li::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      color: #4db5ff;
+      font-weight: bold;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.8rem;
+      top: 5px;
+  }
+
+  /* --- CARDS GRID --- */
+  .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+  }
+
+  .planet-card {
+      background: #0f1a2e;
+      border: 4px solid #fff;
+      border-radius: 0;
+      /* Pixel art style square corners */
+      height: 480px;
+      /* Increased height to accommodate name */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      box-shadow: 8px 8px 0px #4db5ff;
+      /* Retro card shadow */
+      image-rendering: pixelated;
+      /* Ensures pixel art images stay crisp */
+  }
+
+  /* Header Style for Planet Name */
+  .planet-name {
+      width: 100%;
+      background: #000;
+      color: #4db5ff;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      padding: 15px 5px;
+      font-size: 1.1rem;
+      border-bottom: 4px solid #fff;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0px #0056b3;
+  }
+
+  /* Image styling to fill the card */
+  .planet-image {
+      width: 100%;
+      height: 55%;
+      object-fit: cover;
+      display: block;
+      color: #555;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-bottom: 4px solid #fff;
+      background: #000;
+      image-rendering: pixelated;
+  }
+
+  /* --- EXPLORE BUTTON --- */
+  .explore-btn {
+      margin-top: auto;
+      margin-bottom: 20px;
+      padding: 15px 25px;
+      background: #000;
+      border: 2px solid #4db5ff;
+      color: #4db5ff;
+      text-decoration: none;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.7rem;
+      border-radius: 0;
+      transition: all 0.1s;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px #4db5ff;
+  }
+
+  .explore-btn:hover {
+      background: #4db5ff;
+      color: #000;
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #2a6db5;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+      background: #0a1428;
+      border-top: 4px solid #4db5ff;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 10;
+  }
+
+  .footer-message {
+      color: #cbd5e1;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .footer-link-section {
+      font-family: 'Press Start 2P', cursive;
+      color: #4db5ff;
+      font-size: 0.7rem;
+      line-height: 2;
+  }
+
+  .footer-link-section a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 2px dashed #4db5ff;
+      transition: all 0.3s ease;
+      margin-left: 10px;
+      padding: 5px;
+  }
+
+  .footer-link-section a:hover {
+      background: #4db5ff;
+      color: #000;
+      border-style: solid;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+      .hero h1 {
+          font-size: 1.8rem;
+      }
+
+      .nav-container {
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .nav-box {
+          width: 90%;
+      }
+
+      .comparison-container {
+          flex-direction: column;
+      }
+  }
