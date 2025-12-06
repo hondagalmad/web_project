@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', sans-serif;
+  font-weight: normal !important;
+}
+
+body {
+  background: url("download.gif") no-repeat center center fixed;
+  background-size: cover;
+  color: #5f7de0;
+  text-align: center;
+  direction: rtl;
+}
+
+
+.title {
+  margin-top: 50px;
+  font-size: 60px;
+  color: #5f7de0;
+  text-shadow: 0 0 20px #5f7de0;
+}
+
+
+.planet-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 80px;
+}
+
+
+.planet {
+  width: 350px;
+  height: auto;
+}
+
+
+.right-card {
+  width: 400px;
+  height: 700px;
+  padding: 20px;
+  border: 6px solid  #5f7de0;
+  border-radius: 20px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.left-card{
+  width: 400px;
+  height: 700px;
+  padding: 20px;
+  border: 6px solid  #5f7de0;
+  border-radius: 20px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+.section-title {
+  margin-top: 120px;
+  font-size: 50px;
+  color:  #5f7de0;
+  text-shadow: 0 0 10px  #5f7de0;
+}
+
+
+.missions-container {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.mission-box {
+  width: 45%;
+}
+
+.mission-title {
+  font-size: 30px;
+  color:  #5f7de0;
+  margin-bottom: 15px;
+}
+
+.text3 {
+  width: 80%;
+  margin: 50px auto;
+  text-align: left;
+  font-size: 17px;
+  line-height: 2.2;
+  color:  #f5f5f6;
+}
+
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px auto 100px auto;
+}
+
+.images-container img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50px;
+  border: 6px solid  #5f7de0;
+  object-fit: cover;
+}
