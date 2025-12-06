@@ -19,8 +19,8 @@ body {
 .title {
   margin-top: 50px;
   font-size: 60px;
-  color: #e7e8ec;
-  text-shadow: 0 0 20px	#dbcdcd;
+  color: #9fc164;
+  text-shadow: 0 0 20px		#dbcdcd;
 }
 
 
@@ -28,7 +28,7 @@ body {
   width: 400px;
   height: 700px;
   padding: 20px;
-  border: 6px solid #e7e8ec;
+  border: 6px solid #9fc164;
   position: absolute;
   top: 250px;
   color: #fff;
@@ -42,7 +42,7 @@ body {
   width: 400px;
   height:700px ;
   padding: 20px;
-  border: 6px solid #e7e8ec;
+  border: 6px solid #9fc164;
   position: absolute;
   top: 250px;
   color: #fff;
@@ -62,26 +62,26 @@ body {
 
 .past {
   position: absolute;
-  top: 1250px;     
-  left: 290px;   
-  color: #e7e8ec;
+  top: 1280px;     
+  left: 370px;   
+  color: #9fc164;
   font-size: 30px;
-  width: 80px;
+  width: 40px;
 }
 
 .upcoming {
   position: absolute;
-  top: 1295px;    
+  top: 1240px;    
   right: 140px;   
-  color: #e7e8ec;
+  color: #9fc164;
   font-size: 30px;
-  width: 50px;
+  width: 40px;
   line-height:40px ;
 }
 
 .text1 {
   position: absolute;
-  top: 1400px;    
+  top: 1510px;    
   right: 900px;   
   color: #ffffff;
   width: 400px;
@@ -89,10 +89,10 @@ body {
 
 .text2{
   position: absolute;
-  top: 1400px;    
-  left: 890px;   
+  top: 1510px;    
+  left: 800px;   
   color: #ffffff;
-  width: 400px;
+  width: 520px;
 }
 
 ul {
@@ -134,7 +134,7 @@ li {
   width: 300px; 
   height: 300px; 
   border-radius: 50px;   
-  border: 6px solid #e7e8ec; 
+  border: 6px solid #bfbdaf; 
 }
 
 .img2 {
@@ -146,7 +146,7 @@ li {
   width: 300px; 
   height: 300px; 
   border-radius: 50px;  
-  border: 6px solid #e7e8ec; 
+  border: 6px solid #bfbdaf; 
 
 }
 
@@ -159,7 +159,7 @@ li {
   width: 300px; 
   height: 300px; 
   border-radius: 50px; 
-  border: 6px solid #e7e8ec;  
+  border: 6px solid #bfbdaf;  
 }
 
 .img4 {
@@ -171,7 +171,7 @@ li {
   width: 300px; 
   height: 300px; 
   border-radius: 50px; 
-  border: 6px solid #e7e8ec;  
+  border: 6px solid #bfbdaf;  
 }
 
 

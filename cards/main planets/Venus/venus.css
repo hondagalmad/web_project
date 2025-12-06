@@ -9,7 +9,7 @@
 
 body {
   background: url("download.gif") no-repeat center center fixed;
-  background-size: 100%;
+  background-size: cover;
   color: #ffffff;
   text-align: center;
   direction: rtl;
@@ -18,19 +18,19 @@ body {
 
 .title {
   margin-top: 50px;
-  font-size: 80px;
+  font-size: 60px;
   color: #ffd700;
-  text-shadow: 0 0 25px #ff6b00;
+  text-shadow: 0 0 20px	#ff6b00;
 }
 
 
 .left-card{
-  width: 500px;
-  height: 1100px;
+  width: 400px;
+  height: 700px;
   padding: 20px;
   border: 6px solid #ff5e00;
   position: absolute;
-  top: 270px;
+  top: 250px;
   color: #fff;
   text-align: left;
   border-radius: 20px;
@@ -39,12 +39,12 @@ body {
 
 
 .right-card{
-  width: 500px;
-  height:1099px ;
+  width: 400px;
+  height:700px ;
   padding: 20px;
   border: 6px solid #ff5e00;
   position: absolute;
-  top: 270px;
+  top: 250px;
   color: #fff;
   text-align:left;
   border-radius: 20px;
@@ -53,45 +53,50 @@ body {
 
 
 .left-card{
-  left:400px
+  left:40px
 }
 
 .right-card{
-  left:1850px
+  left:910px
 }
 
 .past {
   position: absolute;
-  top: 1700px;     
-  left: 100px;   
+  top: 1250px;     
+  left: 290px;   
   color: #ffd700;
-  font-size: 40px;
+  font-size: 30px;
+  width: 80px;
 }
 
 .upcoming {
   position: absolute;
-  top: 1700px;    
-  right: 300px;   
+  top: 1295px;    
+  right: 140px;   
   color: #ffd700;
-  font-size: 40px;
+  font-size: 30px;
+  width: 50px;
+  line-height:40px ;
 }
 
 .text1 {
   position: absolute;
-  top: 1800px;    
-  right: 50px;   
+  top: 1400px;    
+  right: 900px;   
   color: #ffffff;
-  font-size: 25px;
-  line-height: 2.5;
+  width: 300px;
+  line-height: 35px;
+  font-size: 20px ;
 }
 
 .text2{
   position: absolute;
-  top: 1800px;    
-  left: 150px;   
+  top: 1400px;    
+  left: 970px;   
   color: #ffffff;
-  font-size: 25px;
-  line-height: 2.5;
+  width: 270px;
+  line-height: 43px;
+  font-size: 20px ;
 }
 
 ul {
@@ -102,6 +107,7 @@ ul {
     margin-right: 1px;       
 }
 
+
 li {
     text-align: left;          
   }
@@ -109,11 +115,11 @@ li {
 
   .text3{
   position: absolute;
-  top: 2450px;    
-  left: 900px;   
+  top : 2230px;    
+  left: 50px;   
   color: #ffffff;
-  font-size: 25px;
-  line-height: 2.5;
+  font-size: 17px;
+  line-height: 2;
 }
 
 
@@ -128,34 +134,34 @@ li {
   top: 10px;         
   left: 1px; 
   margin-top: 650px;
-  margin-left: -2370px;  
-  width: 550px; 
-  height:550px; 
+  margin-left: -40px;  
+  width: 300px; 
+  height: 300px; 
   border-radius: 50px;   
   border: 6px solid #ff5e00; 
 }
 
 .img2 {
-   position: absolute;
+  position: absolute;
   top: 10px;         
   left: 1px; 
   margin-top: 650px;
-  margin-left: -1700px;  
-  width: 550px; 
-  height: 550px; 
+  margin-left: -700px;  
+  width: 300px; 
+  height: 300px; 
   border-radius: 50px;  
   border: 6px solid #ff5e00; 
 
 }
 
 .img3 {
-   position: absolute;
+  position: absolute;
   top: 10px;         
   left: 1px; 
   margin-top: 650px;
   margin-left: -1027px;  
-  width: 550px; 
-  height: 550px; 
+  width: 300px; 
+  height: 300px; 
   border-radius: 50px; 
   border: 6px solid #ff5e00;  
 }
@@ -165,9 +171,9 @@ li {
   top: 10px;         
   left: 1px; 
   margin-top: 650px;
-  margin-left: -300px;  
-  width: 550px; 
-  height: 550px; 
+  margin-left: -370px;  
+  width: 300px; 
+  height: 300px; 
   border-radius: 50px; 
   border: 6px solid #ff5e00;  
 }
