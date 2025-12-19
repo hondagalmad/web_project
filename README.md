@@ -35,9 +35,9 @@ We are a group of developers passionate about blending technology with science:
 
 | Name | Role | Profile |
 | :--- | :--- | :--- |
-| **Mohanad Galmad** | Developer | [@Honda](https://github.com/hondagalmad) |
-| **Yousef Khaled** | Developer | [@Khaldoze](https://github.com/khaldoze)|
-| **Moaz Waleed** | Developer | [@Moza202](https://github.com/Moza202) |
+| **Mohanad Galmad** | Developer | [@Mohanad-Galmad](https://github.com/hondagalmad) |
+| **Yousef Khaled** | Developer | [@Yousef-Khaled](https://github.com/khaldoze)|
+| **Moaz Waleed** | Developer | [@Moaz-Waleed](https://github.com/Moza202) |
 | **Moaz Karam** | Developer | [@Moaz-Karam](TBD) |
 | **Mawadda Gaber** | Developer | [@Mawadda](https://github.com/Mawadda0) |
 | **Nour Elhouda** | Developer | [@Nour-Elhouda](https://github.com/Nourelhouda101) |
@@ -52,7 +52,7 @@ We are a group of developers passionate about blending technology with science:
 
 * **Three.js** - For the 3D engine.
 * **CSS3/Tailwind** - For the modern, dark-themed space UI.
-**HTML5 / JavaScript** - Core logic and structure
+* **HTML5 / JavaScript** - Core logic and structure.
 ---
 
 ## 📥 Installation & Setup
@@ -60,4 +60,8 @@ To run this project locally:
 
 1. Clone the repo:
    ```bash
-   git clone [https://github.com/hondagalmad/stellar_compass.git](https://github.com/hondagalmad/stellar_compass.git)
+   git clone [https://github.com/your-username/Stellar-Compass.git](https://github.com/your-username/Stellar-Compass.git)
+   
+---
+
+## 🌌 If you want to enjoy the experience of our project, simply check [here](https://hondagalmad.github.io/stellar_compass/).
