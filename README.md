@@ -52,7 +52,7 @@ We are a group of developers passionate about blending technology with science:
 
 * **Three.js** - For the 3D engine.
 * **CSS3/Tailwind** - For the modern, dark-themed space UI.
-
+**HTML5 / JavaScript** - Core logic and structure
 ---
 
 ## 📥 Installation & Setup
@@ -60,4 +60,4 @@ To run this project locally:
 
 1. Clone the repo:
    ```bash
-   git clone [https://github.com/your-username/Stellar-Compass.git](https://github.com/your-username/Stellar-Compass.git)
+   git clone [https://github.com/hondagalmad/stellar_compass.git](https://github.com/hondagalmad/stellar_compass.git)
