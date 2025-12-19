@@ -38,11 +38,11 @@ We are a group of developers passionate about blending technology with science:
 | **Mohanad Galmad** | Developer | [@Mohanad-Galmad](https://github.com/hondagalmad) |
 | **Yousef Khaled** | Developer | [@Yousef-Khaled](https://github.com/khaldoze)|
 | **Moaz Waleed** | Developer | [@Moaz-Waleed](https://github.com/Moza202) |
-| **Moaz Karam** | Developer | [@Moaz-Karam](TBD) |
-| **Mawadda Gaber** | Developer | [@Mawadda](https://github.com/Mawadda0) |
+| **Moaz Karam** | Developer | [@Moaz-Karam](https://github.com/moaz-karam) |
+| **Mawadda Gaber** | Developer | [@Mawadda-Gaber](https://github.com/Mawadda0) |
 | **Nour Elhouda** | Developer | [@Nour-Elhouda](https://github.com/Nourelhouda101) |
-| **Hana-abo-eissa** | Developer | [@Hana-AboEissa](https://github.com/hana-abo-eissa) |
-| **Nouraa Reda** | Developer | [@Noura](https://github.com/Nouraa0) |
+| **Hana Abo Eissa** | Developer | [@Hana-AboEissa](https://github.com/hana-abo-eissa) |
+| **Noura Reda** | Developer | [@Noura-Reda](https://github.com/Nouraa0) |
 
 
 
