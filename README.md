@@ -1,22 +1,63 @@
-## 🚀 Stellar Compass 🚀
+# 🌌 Stellar Compass
+> A cutting-edge 3D interactive space exploration platform developed for Suez Canal University.
 
-Stellar Compass is an interactive web experience designed to showcase our Solar System in a visually engaging and educational way. The website displays all major planets, along with officially recognized dwarf planets, each presented through informative cards and dedicated 3D pages.
-
----
-
-## 🌌 Overview
-Stellar Compass allows users to explore planets and dwarf planets through clean UI cards on the main page. Each card includes:
-
-- A fully interactive **3D planet model** (rotatable & zoomable).
-- Extended scientific data.
-- Fun facts and high-quality textures.
-- Organized information sections for easy reading.
-- Clear cards for both **Planets & Dwarf Planets**.
+<p align="center">
+  <img src="https://img.shields.io/badge/Project-Stellar--Compass-blueviolet?style=for-the-badge&logo=nasa">
+  <img src="https://img.shields.io/badge/University-SCU-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Tech-Three.js-black?style=for-the-badge&logo=three.js">
+</p>
 
 ---
 
-## 🌌 Usage
-If you want to enjoy the experience of our project, simply clone the repository:
+## 📖 Overview
+**Stellar Compass** is an immersive educational tool designed to bring the wonders of the solar system to your screen. Using advanced 3D rendering, it allows users to explore celestial bodies with scientific precision and visual beauty.
 
-```bash
-git clone https://github.com/hondagalmad/web_project.git
+## 🚀 Key Features
+
+* **🎮 Full 3D Interaction:** Rotatable and zoomable planet models for an up-close look.
+* **📊 Scientific Data:** Access detailed metrics like gravity, orbital period, and atmospheric composition.
+* **✨ High-Quality Textures:** Photorealistic surfaces for a cinematic experience.
+* **💡 Fun Facts:** Curated trivia to make learning about space engaging.
+* **📱 Organized UI:** Clean sections and information cards for seamless navigation.
+
+---
+
+## 🎓 Academic Context
+This project was developed as part of our academic curriculum at **Suez Canal University (SCU)**.
+
+* **Supervised by:** Dr. Tarneem Elemam
+* **Institution:** Faculty of Computers and Informatics, Suez Canal University.
+
+---
+
+## 👥 The Team
+We are a group of developers passionate about blending technology with science:
+
+| Name | Role | Profile |
+| :--- | :--- | :--- |
+| **Mohanad Galmad** | Developer | [@Mohanad-Galmad](https://github.com/hondagalmad) |
+| **Yousef Khaled** | Developer | [@Yousef-Khaled](https://github.com/khaldoze)|
+| **Moaz Waleed** | Developer | [@Moaz-Waleed](https://github.com/Moza202) |
+| **Moaz Karam** | Developer | [@Moaz-Karam](TBD) |
+| **Mawadda Gaber** | Developer | [@Mawadda](https://github.com/Mawadda0) |
+| **Nour Elhouda** | Developer | [@Nour-Elhouda](https://github.com/Nourelhouda101) |
+| **Hana-abo-eissa** | Developer | [@Hana-AboEissa](https://github.com/hana-abo-eissa) |
+| **Nouraa Reda** | Developer | [@Noura](https://github.com/Nouraa0) |
+
+
+
+---
+
+## 🛠️ Built With
+
+* **Three.js** - For the 3D engine.
+* **CSS3/Tailwind** - For the modern, dark-themed space UI.
+
+---
+
+## 📥 Installation & Setup
+To run this project locally:
+
+1. Clone the repo:
+   ```bash
+   git clone [https://github.com/your-username/Stellar-Compass.git](https://github.com/your-username/Stellar-Compass.git)
